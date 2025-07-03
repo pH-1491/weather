@@ -1,0 +1,153 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("night.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+body.light-theme {
+    background-image: url("day.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: black;
+}
+
+.body.light-theme.search-bar {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+.head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);           /* The main glass effect */
+    margin-bottom: 10px;
+}
+
+.btn{
+    margin-left: 1000px;
+    font-size: 25px;
+    border: none;
+    border-radius: 20px;
+}
+
+.head .btn {
+    position: absolute;
+    right: 10px; /* Distance from right edge */
+}
+
+.search-bar .light-theme .i1 {
+    color: #333;
+    transition: color 0.3s;
+}
+
+
+input {
+    width: 800px;
+    height: 40px;
+    background-color: #150578;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.i1{
+    font-size: 30px;
+    /*background-color: #78C0E0;*/
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.display{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.temp-display{
+    text-align: center;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);           /* The main glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    border-radius: 15px;
+}
+
+.weather-photo{
+    widht: 200px;
+    font-size: 60px;
+    border-radius: 15px;
+    margin-left: 20px;
+}
+
+.box{
+    padding: 5px;
+    width: 250px;
+
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);           /* The main glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    border-radius: 15px;
+}
+
+
+.addon {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-areas:
+        "b1 b2"
+        "b3 b4"
+        "b6 .";
+    gap: 50px;
+    justify-content: center;
+}
+
+.b1 { grid-area: b1; }
+.b2 { grid-area: b2; }
+.b3 { grid-area: b3; }
+.b4 { grid-area: b4; }
+.b6 { grid-area: b6; }
+
+.b6 {
+    grid-area: b6;
+    justify-self: center;
+}
+
+.pr{
+    text-align: right;
+}
