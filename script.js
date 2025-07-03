@@ -10,7 +10,7 @@ const snowfallElement = document.querySelector('.b3 .pr');
 const precipElement = document.querySelector('.b4 .pr');
 const pressureElement = document.querySelector('.b6 .pr');
 
-// Get coordinates using Open-Meteo Geocoding API
+
 async function getCoordinates(city) {
     const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}`;
     const response = await fetch(url);
@@ -22,7 +22,7 @@ async function getCoordinates(city) {
     return { latitude, longitude };
 }
 
-// Get weather data
+
 async function getWeather(city) {
     try {
         const { latitude, longitude } = await getCoordinates(city);
@@ -34,9 +34,9 @@ async function getWeather(city) {
         // Update fields
         tempElement.innerHTML = `${current.temperature_2m} °C`;
         descpElement.innerHTML = `${current.cloudcover < 50 ? "Mostly Sunny <i class='fa-solid fa-sun'></i>" : "Cloudy <i class='fa-solid fa-cloud'></i>"}`;
-        humidityElement.innerHTML = `N/A`; // Open-Meteo doesn't provide humidity in this call
+        humidityElement.innerHTML = `N/A`; 
         windElement.innerHTML = `${current.wind_speed_10m} km/h`;
-        snowfallElement.innerHTML = `N/A`; // Not available in current data
+        snowfallElement.innerHTML = `N/A`;
         precipElement.innerHTML = `${current.precipitation} mm`;
         pressureElement.innerHTML = `${current.pressure_msl} hPa`;
 
@@ -45,7 +45,7 @@ async function getWeather(city) {
     }
 }
 
-// Trigger on search icon click
+
 searchIcon.addEventListener('click', () => {
     const city = searchInput.value.trim();
     if (city !== '') {
@@ -53,14 +53,12 @@ searchIcon.addEventListener('click', () => {
     }
 });
 
-// Optional: Trigger on "Enter" key
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         getWeather(searchInput.value.trim());
     }
 });
 
-//Theme toggle
 let theme_btn = document.querySelector('.btn');
 
 theme_btn.addEventListener('click', () => {
